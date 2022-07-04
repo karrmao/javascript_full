@@ -613,12 +613,12 @@
 /*****************************************************************************/
 /*9.2 */
 
-function getKeys(obj) {
-  Object.keys(obj).forEach(key => /*{*/ console.log(key) /*;}*/);
-}
+// function getKeys(obj) {
+//   Object.keys(obj).forEach(key => /*{*/ console.log(key) /*;}*/);
+// }
 
 // examples
-getKeys({ name: 'Denis', city: 'Warsaw', englishLevel: 'A1' });
+// getKeys({ name: 'Denis', city: 'Warsaw', englishLevel: 'A1' });
 // prints ===>
 // name
 // city
@@ -626,3 +626,22 @@ getKeys({ name: 'Denis', city: 'Warsaw', englishLevel: 'A1' });
 
 /*****************************************************************************/
 /*9.3 */
+function addPropertyV1(userData, userId) {
+  // put your code here
+  console.log((userData = 'id'));
+}
+// ==> { name: 'Sam', id: '1234567' }
+
+// put your code here
+function addPropertyV2(userData, userId) {}
+// put your code here
+function addPropertyV3(userData, userId) {}
+// put your code here
+function addPropertyV4(userData, userId) {}
+
+// examples
+const user = {
+  name: 'Sam',
+};
+
+console.log(addPropertyV1(user, '1234567')); // ==> { name: 'Sam', id: '1234567' }
