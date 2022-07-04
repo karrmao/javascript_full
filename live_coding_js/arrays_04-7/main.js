@@ -47,7 +47,7 @@
 // console.log('/*****************************************************/');
 // /*******************************************************************************/
 
-const anotherNumbersList = [5, 0, 8, 10, -4, 50, 200];
+// const anotherNumbersList = [5, 0, 8, 10, -4, 50, 200];
 
 //input: callback
 //output: new array
@@ -68,18 +68,18 @@ function filterCallback(element) { //=> наш callback до функції
 */
 
 /* Функція а в середині callback */
-const filterRes = anotherNumbersList.filter(function filterCallback(element) {
-  return element > 5;
-});
+// const filterRes = anotherNumbersList.filter(function filterCallback(element) {
+//   return element > 5;
+// });
 
-/*Та сама функція але Стрілочна */
-const filterResClone = anotherNumbersList.filter(el => el > 5);
+// /*Та сама функція але Стрілочна */
+// const filterResClone = anotherNumbersList.filter(el => el > 5);
 
-/*Та сама Стрілочна але анонімна*/
-console.log(anotherNumbersList.filter(el => el > 5));
+// /*Та сама Стрілочна але анонімна*/
+// console.log(anotherNumbersList.filter(el => el > 5));
 
-console.log(filterRes);
-console.log(filterResClone);
+// console.log(filterRes);
+// console.log(filterResClone);
 
 /*******************************************************************************/
 // У випадку коли ми задаємо додаткові маніпуляції для index. Ми задаємо index як
@@ -91,33 +91,33 @@ console.log(filterResClone);
 
 /*******************************************************************************/
 
-function sum(from, to, resolver) {
-  let sumRes = 0;
-  for (let i = from; i <= to; i++) {
-    sumRes += i;
-  }
-  console.log(sumRes);
+// function sum(from, to, resolver) {
+//   let sumRes = 0;
+//   for (let i = from; i <= to; i++) {
+//     sumRes += i;
+//   }
+//   console.log(sumRes);
 
-  resolver(sumRes);
-}
+//   resolver(sumRes);
+// }
 
-//--data test
-function resolver(number) {
-  console.log(number);
-}
+// //--data test
+// function resolver(number) {
+//   console.log(number);
+// }
 
-function func(number) {
-  console.log(number);
-}
+// function func(number) {
+//   console.log(number);
+// }
 
-function funcAlert(number) {
-  alert(number);
-}
+// function funcAlert(number) {
+//   alert(number);
+// }
 
-function sendEmail(number) {
-  //
-}
+// function sendEmail(number) {
+//   //
+// }
 
-sum(1, 10, resolver);
-sum(1, 4, func);
-sum(1, 7, funcAlert);
+// sum(1, 10, resolver);
+// sum(1, 4, func);
+// sum(1, 7, funcAlert);
