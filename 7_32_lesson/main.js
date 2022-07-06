@@ -611,7 +611,7 @@
 // console.log(copyObj);
 
 /*****************************************************************************/
-/*9.2 */
+/*9.1H */
 
 // function getKeys(obj) {
 //   Object.keys(obj).forEach(key => /*{*/ console.log(key) /*;}*/);
@@ -625,23 +625,450 @@
 // englishLevel
 
 /*****************************************************************************/
-/*9.3 */
-function addPropertyV1(userData, userId) {
-  // put your code here
-  console.log((userData = 'id'));
+/*9.2H */
+// function addPropertyV1(userData, userId) {
+//   // put your code here
+//   userData.id = userId;
+//   return userData;
+// }
+
+// function addPropertyV2(userData, userId) {
+//   let userData2 = {};
+//   console.log(userData2);
+//   userData2.id = userId;
+//   Object.assign(userData, userData2);
+//   return userData;
+// }
+// // put your code here
+// function addPropertyV3(userData, userId) {
+//   let userData3 = {};
+//   console.log(userData3);
+//   userData3.id = userId;
+//   Object.assign(userData3, userData);
+//   return userData3;
+// }
+// // put your code here
+// function addPropertyV4(userData, userId) {
+//   let userData4 = {};
+//   userData4.id = userId;
+//   Object.assign(...userData, ...userData4);
+//   return userData4;
+// }
+
+// // examples
+// const user = {
+//   name: 'Sam',
+// };
+
+// console.log(user);
+
+// console.log(addPropertyV1(user, '1234567')); // ==> { name: 'Sam', id: '1234567' }
+
+/*****************************************************************************/
+/*9.3H */
+
+/* eslint-disable prefer-object-spread */
+
+/* В решения этой задачи используется метод Object.assign. В реальных проектах для такой задачи
+ * лучше использовать spread опертор - это самый современный подход
+ *
+ * Задачу мы делаем для практики и демонстрационных целей, поэтому чтобы eslint не ругался на эту ошибку,
+ * для этой задачи он отключен аннотацией eslint-disable
+ * */
+
+// function mergeObjectsV1(obj1, obj2) {
+//   // put your code here
+//   console.log(Object.assign(obj1, obj2));
+// }
+
+// function mergeObjectsV2(obj1, obj2) {
+//   // put your code here
+//   console.log(Object.assign(obj2, obj1));
+// }
+
+// function mergeObjectsV3(obj1, obj2) {
+//   // put your code here
+//   console.log({ ...obj1, ...obj2 });
+// }
+
+// function mergeObjectsV4(obj1, obj2) {
+//   // put your code here
+//   console.log({ ...obj2, ...obj1 });
+// }
+
+// // examples
+// const obj1 = {
+//   name: 'Tom',
+//   age: 17,
+// };
+
+// const obj2 = {
+//   name: 'Bob',
+//   student: false,
+// };
+
+// mergeObjectsV1(obj1, obj2); // ==> { name: 'Bob', age: 17, student: false }
+// mergeObjectsV2(obj1, obj2); // ==> { name: 'Tom', age: 17, student: false }
+// mergeObjectsV3(obj1, obj2); // ==> { name: 'Bob', age: 17, student: false }
+// mergeObjectsV4(obj1, obj2); // ==> { name: 'Tom', age: 17, student: false }
+
+/*****************************************************************************/
+/*9.4H */
+
+// const getPeople = obj => {
+//   // put your code here
+//   const roomsInOneArray = Object.assign(room1, room2, room3);
+
+//   const usersArray = Object.entries(roomsInOneArray);
+//   const userNames = usersArray.map(user => user[1]);
+
+//   return userNames;
+// };
+
+// rooms = {
+//   room1: [{ name: 'Jack' }, { name: 'Andy' }, { name: 'Ann' }, { name: 'Vasyl' }],
+//   room2: [{ name: 'Vasyl' }],
+//   room3: [{ name: 'Denis' }, { name: 'Max' }, { name: 'Alex' }],
+// };
+
+/*****************************************************************************/
+/*9.4H */
+// const getPeople = obj => {
+//   return [].concat(...Object.values(obj)).map(el => el.name);
+// };
+
+// const rooms = {
+//   room1: [{ name: 'Jack' }, { name: 'Andrey' }, { name: 'Ann' }, { name: 'Vasyl' }],
+//   room2: [{ name: 'Dan' }],
+//   room3: [{ name: 'Denis' }, { name: 'Max' }, { name: 'Alex' }],
+// };
+
+//getPeople(rooms);
+/*****************************************************************************/
+/*9.5H */
+// const dayTransactions = [
+//   { userId: 22, amount: 60, operation: 'sell' },
+//   { userId: 22, amount: 160, operation: 'buy' },
+//   { userId: 44, amount: 90, operation: 'sell' },
+// ];
+
+// // 37
+// const getTotalRevenue = dayTransactions => {
+//   let res = 0;
+
+//   for (let amounts of Object.values(dayTransactions)) {
+//     console.log(Object.values(dayTransactions));
+//     res += amounts.amount;
+//     console.log(amounts.amount);
+//   }
+//   console.log(Object.values(dayTransactions));
+
+//   // console.log(res);
+// };
+
+// getTotalRevenue(dayTransactions);
+
+/*****************************************************************************/
+/**Numbers*/
+/*****************************************************************************/
+/*10.1 */
+// const arr = [2, 2e64, -7, Infinity, 44, -Infinity, 0, NaN, 0.545];
+// const copyArr = arr.slice();
+
+// const getFiniteNumbers = copyArr.filter(function filterCallbackArr(el) {
+//   return Number.isFinite(el);
+// });
+
+// console.log(getFiniteNumbers);
+
+// /******/
+// const getFiniteNumbersV2 = copyArr.filter(function filterCallbackArr(el) {
+//   return isFinite(el);
+// });
+
+// console.log(getFiniteNumbersV2);
+
+// /******/
+// const getNaN = copyArr.filter(function filterCallbackArr(el) {
+//   return Number.isNaN(el);
+// });
+
+// console.log(getNaN);
+
+// /******/
+// const getNaNV2 = copyArr.filter(function filterCallbackArr(el) {
+//   return isNaN(el);
+// });
+
+// console.log(getNaNV2);
+
+// /******/
+// const getIntegers = copyArr.filter(function filterCallbackArr(el) {
+//   return Number.isInteger(el);
+// });
+
+// console.log(getIntegers);
+
+// console.log(arr);
+
+/******/
+// function getFiniteNumbers(copyArr) {
+//   return copyArr.filter(el => Number.isFinite(el));
+// }
+
+// function etFiniteNumbersV2(copyArr) {
+//   return copyArr.filter(el => isFinite(el));
+// }
+// /******/
+// function getNaN(copyArr) {
+//   return copyArr.filter(el => Number.isNaN(el));
+// }
+// /******/
+// function getNaNV2(copyArr) {
+//   return copyArr.filter(el => isNaN(el));
+// }
+// /******/
+
+// function getIntegers(copyArr) {
+//   return copyArr.filter(el => Number.isInteger(el));
+// }
+// /******/
+
+// console.log(getFiniteNumbers(copyArr));
+// console.log(etFiniteNumbersV2(copyArr));
+// console.log(getNaN(copyArr));
+// console.log(getNaNV2(copyArr));
+// console.log(getIntegers(copyArr));
+
+/*****************************************************************************/
+/*10.2 */
+
+// const arr = [2, 2e64, -7, Infinity, 44, -Infinity, 0, NaN, 0.545, '100px', 0.5, '0.15.15text'];
+// const copyArr = arr.slice();
+
+// function getParsedIntegers(arr) {
+//   return arr.map(el => Number.parseInt(el));
+// }
+
+// function getParsedIntegersV2(arr) {
+//   return arr.map(el => parseInt(el));
+// }
+
+// function getParsedFloats(arr) {
+//   return arr.map(el => Number.parseFloat(el));
+// }
+
+// function getParsedFloatsV2(arr) {
+//   return arr.map(el => parseFloat(el));
+// }
+
+// console.log(getParsedIntegers(arr));
+// console.log(getParsedIntegersV2(arr));
+// console.log(getParsedFloats(arr));
+// console.log(getParsedFloatsV2(arr));
+
+// console.log(Number.parseInt(2e64));
+// console.log(Number.parseInt('100px'));
+
+/*****************************************************************************/
+/*10.3 */
+
+// const multiRound = num => {
+//   // const resMathFloor = num.map(el => Math.floor(el));
+//   // return resMathFloor;
+//   return [
+//     Math.floor(num * 100) / 100,
+//     Math.trunc(num * 100) / 100,
+//     Math.ceil(num * 100) / 100,
+//     Math.round(num * 100) / 100,
+//     Number(num.toFixed(2)),
+//   ];
+// };
+
+// // examples
+// console.log(multiRound(11.12556)); // ==> [11.12, 11.12, 11.13, 11.13, 11.13]
+// console.log(multiRound(6.112)); // ==> [6.11, 6.11, 6.12, 6.11, 6.11]
+
+/*****************************************************************************/
+/*10.4 */
+
+// const getMaxAbsoluteNumber = arr => {
+//   // put your code here
+//   if (!Array.isArray(arr)) {
+//     return null;
+//   }
+//   console.log(...arr);
+
+//   const absoluteValues = arr.map(num => Math.abs(num));
+// console.log(absoluteValues);
+// console.log(...absoluteValues);
+
+//   return (maxRes = Math.max(...absoluteValues));
+// };
+
+// // examples
+// console.log(getMaxAbsoluteNumber());
+//console.log(getMaxAbsoluteNumber([-10, 10, -10])); // ===> 10
+// getMaxAbsoluteNumber([2.1, 0, 1.6]); // ===> 2.1
+// getMaxAbsoluteNumber([-6, 3, 5, -1]); // ===> 6
+// getMaxAbsoluteNumber([-777, 3, -1, 45, -20]); // ===> 777
+
+/*****************************************************************************/
+/*10.1H */
+
+// function getTotalPrice(arr) {
+//   const res = Math.floor([...arr].reduce((first, second) => first + second, 0) * 100) / 100;
+
+//   return '$' + res; //17.159 => 17.15
+// }
+
+// const array = [17.159, 18.748, 20.558];
+// console.log(getTotalPrice(array));
+//
+
+/*****************************************************************************/
+/*10.2H */
+ const getRandomNumbers = (length, from, to) => {
+   const resArr = [];
+
+   if (to - from < 1) {
+     return null;
+   }
+
+   // if (!Number.isInteger(arr)) {
+   //   return null;
+   // }
+
+   for (let i = 0; i < length; i += 1) {
+     resArr.push(Number((Math.random() * (to - from) + from).toFixed()));
+   }
+   return resArr;
+ };
+
+ console.log(getRandomNumbers(5, 1.4, 3.22)); // ==> [2, 2, 2, 3, 2]
+ console.log(getRandomNumbers(5, 1.4, 3.22)); // ==> [3, 2, 2, 2, 2]
+ console.log(getRandomNumbers(5, 1.4, 3.22)); // ==> [3, 3, 2, 3, 2]
+/*****************************************************************************/
+/*10.3H */
+ const superRound = (num, prec) => {
+   let multyPrec = 1;
+   for (let i = 1; i <= prec; i++) {
+     multyPrec *= 10;
+   }
+
+   return [
+     Math.floor(num * multyPrec) / multyPrec,
+     Math.trunc(num * multyPrec) / multyPrec,
+     Math.ceil(num * multyPrec) / multyPrec,
+     Math.round(num * multyPrec) / multyPrec,
+     Number(num.toFixed(prec)),
+   ];
+ };
+
+ // examples
+console.log(superRound(11.12556, 2)); // ==> [11.12, 11.12, 11.13, 11.13, 11.13]
+ console.log(superRound(6.11, 3)); // ==> [6.11, 6.11, 6.11, 6.11, 6.11]
+
+/*****************************************************************************/
+/**String*/
+/*****************************************************************************/
+/*11.1 */
+
+// function splitText(string, num = 10) {
+//   if (typeof string !== 'string') {
+//     return null;
+//   }
+
+//   console.log(num);
+//   const strArr = [];
+//   let startPosition = 0;
+//   while (true) {
+//     let chunk = string.substr(startPosition, num);
+//     if (chunk.length === 0) {
+//       break;
+//     }
+//     strArr.push(chunk[0].toUpperCase() + chunk.slice(1));
+//     startPosition += num;
+//   }
+//   return strArr.join('\n');
+// }
+
+// console.log(splitText('abcdefg', 4));
+// console.log(splitText('some message with the text'));
+// console.log(splitText('xsf', 5));
+
+/*****************************************************************************/
+/*11.2 */
+//const contacts = 'string';
+
+// const contacts = [
+//   { name: 'Tom', phoneNumber: '777-77-77' },
+//   { name: 'Ann', phoneNumber: '555-55-5' },
+//   { name: 'Mary', phoneNumber: '444-44-44' },
+//   { name: 'Hary', phoneNumber: '333-33-33' },
+// ];
+
+// const sortContactsF = (contacts, ask) => {
+//   if (!Array.isArray(contacts)) {
+//     return null;
+//   }
+
+//   const result = contacts.sort((a, b) => {
+//     if (ask === true) {
+//       return a.name.localeCompare(b.name);
+//     } else {
+//       return b.name.localeCompare(a.name);
+//     }
+//   });
+//   return result;
+// };
+
+// console.log(sortContactsF(contacts, true));
+// console.log(sortContactsF(contacts, false));
+
+// console.log('************V2******************');
+
+// const sortContacts = (contacts, isAsc) => {
+//   if (!Array.isArray(contacts)) {
+//     return null;
+//   }
+//   const result = contacts;
+//   contacts.sort((a, b) => {
+//     return a.name.localeCompare(b.name);
+//   });
+//   if (isAsc === false) {
+//     contacts.sort((a, b) => {
+//       return b.name.localeCompare(a.name);
+//     });
+//   }
+//   return result;
+// };
+
+// console.log(sortContacts(contacts, true));
+// console.log(sortContacts(contacts, false));
+
+/*****************************************************************************/
+/*11.3*/
+
+function splitString(string, num = 10) {
+  if (typeof string !== 'string') {
+    return null;
+  }
+
+  //console.log(num);
+  const strArr = [];
+  let startPosition = 0;
+  while (true) {
+    let chunk = string.substr(startPosition, num);
+    if (chunk.length === 0) {
+      break;
+    }
+    strArr.push(chunk[0] + chunk.slice(1));
+    startPosition += num;
+  }
+  let strArrD = strArr.join('\n');
+  console.log(strArrD);
+  return strArrD;
 }
-// ==> { name: 'Sam', id: '1234567' }
 
-// put your code here
-function addPropertyV2(userData, userId) {}
-// put your code here
-function addPropertyV3(userData, userId) {}
-// put your code here
-function addPropertyV4(userData, userId) {}
-
-// examples
-const user = {
-  name: 'Sam',
-};
-
-console.log(addPropertyV1(user, '1234567')); // ==> { name: 'Sam', id: '1234567' }
+console.log(splitString('abcd efgh', 4)); //=> ['abcd', ' efg', 'h...']
