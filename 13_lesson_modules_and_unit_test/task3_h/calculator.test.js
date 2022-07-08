@@ -13,9 +13,3 @@ it('Should return people older then 18', () => {
     getAdults({ 'John Doe': 19, Bob: 18 }),
   );
 });
-
-it('Should return people older then 18', () => {
-  expect(getAdults({ 'John Doe': 19, Tom: 17, Bob: 18 })).toEqual(
-    getAdults({ 'John Doe': 19, Bob: 18 }),
-  );
-});
