@@ -1,27 +1,24 @@
-//export const getSquaredOfMinNumber = arr => Math.pow(Math.min(...arr.map(el => Math.abs(el))), 2);
-
-export const calc = expression => {
-  if (typeof expression !== 'string') {
+export const reverseArray = arr => {
+  if (!Array.isArray(arr)) {
     return null;
   }
+  return arr.slice().reverse();
+};
 
-  const [a, operation, b] = expression.split(' ');
-  let result;
-
-  switch (operation) {
-    case '+':
-      result = +a + +b;
-      break;
-    case '-':
-      result = +a - +b;
-      break;
-    case '*':
-      result = +a * +b;
-      break;
-    case '/':
-      result = +a / +b;
-      break;
+export const withdraw = (clients, balances, client, amount) => {
+  if (balances[clients.indexOf(client)] < amount) {
+    return -1;
   }
+  return balances[clients.indexOf(client)] - amount;
+};
 
-  return `${expression} = ${result}`;
+export const getAdults = obj => {
+  let result = {};
+  console.log(result);
+  for (let el in obj) {
+    if (obj[el] >= 18) {
+      result[el] = obj[el];
+    }
+  }
+  return result;
 };

@@ -1,21 +1,21 @@
-import { calc } from './calculator.js';
+import { reverseArray, withdraw, getAdults } from './calculator.js';
 
 it('Should return null', () => {
-  expect(calc('x')).toEqual(null);
+  expect(reverseArray(Array.isArray([1, 2, 3]))).not.toEqual(true);
 });
 
-it('Should return sum', () => {
-  expect(calc('2 + 2')).toEqual('2 + 2 = 4');
+it('Should return reverse array', () => {
+  expect(reverseArray([1, 2, 3])).toEqual([3, 2, 1]);
 });
 
-it('Should return subtraction', () => {
-  expect(calc('4 - 2')).toEqual('4 - 2 = 2');
+it('Should return people older then 18', () => {
+  expect(getAdults({ 'John Doe': 19, Tom: 17, Bob: 18 })).toEqual(
+    getAdults({ 'John Doe': 19, Bob: 18 }),
+  );
 });
 
-it('Should return multiplication', () => {
-  expect(calc('5 * 5')).toEqual('5 * 5 = 25');
-});
-
-it('Should return division', () => {
-  expect(calc('15 / 3')).toEqual('15 / 3 = 5');
+it('Should return people older then 18', () => {
+  expect(getAdults({ 'John Doe': 19, Tom: 17, Bob: 18 })).toEqual(
+    getAdults({ 'John Doe': 19, Bob: 18 }),
+  );
 });
