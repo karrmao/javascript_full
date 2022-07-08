@@ -928,46 +928,46 @@
 
 /*****************************************************************************/
 /*10.2H */
- const getRandomNumbers = (length, from, to) => {
-   const resArr = [];
+// const getRandomNumbers = (length, from, to) => {
+//   const resArr = [];
 
-   if (to - from < 1) {
-     return null;
-   }
+//   if (to - from < 1) {
+//     return null;
+//   }
 
-   // if (!Number.isInteger(arr)) {
-   //   return null;
-   // }
+//   // if (!Number.isInteger(arr)) {
+//   //   return null;
+//   // }
 
-   for (let i = 0; i < length; i += 1) {
-     resArr.push(Number((Math.random() * (to - from) + from).toFixed()));
-   }
-   return resArr;
- };
+//   for (let i = 0; i < length; i += 1) {
+//     resArr.push(Number((Math.random() * (to - from) + from).toFixed()));
+//   }
+//   return resArr;
+// };
 
- console.log(getRandomNumbers(5, 1.4, 3.22)); // ==> [2, 2, 2, 3, 2]
- console.log(getRandomNumbers(5, 1.4, 3.22)); // ==> [3, 2, 2, 2, 2]
- console.log(getRandomNumbers(5, 1.4, 3.22)); // ==> [3, 3, 2, 3, 2]
+// console.log(getRandomNumbers(5, 1.4, 3.22)); // ==> [2, 2, 2, 3, 2]
+// console.log(getRandomNumbers(5, 1.4, 3.22)); // ==> [3, 2, 2, 2, 2]
+// console.log(getRandomNumbers(5, 1.4, 3.22)); // ==> [3, 3, 2, 3, 2]
 /*****************************************************************************/
 /*10.3H */
- const superRound = (num, prec) => {
-   let multyPrec = 1;
-   for (let i = 1; i <= prec; i++) {
-     multyPrec *= 10;
-   }
+// const superRound = (num, prec) => {
+//   let multyPrec = 1;
+//   for (let i = 1; i <= prec; i++) {
+//     multyPrec *= 10;
+//   }
 
-   return [
-     Math.floor(num * multyPrec) / multyPrec,
-     Math.trunc(num * multyPrec) / multyPrec,
-     Math.ceil(num * multyPrec) / multyPrec,
-     Math.round(num * multyPrec) / multyPrec,
-     Number(num.toFixed(prec)),
-   ];
- };
+//   return [
+//     Math.floor(num * multyPrec) / multyPrec,
+//     Math.trunc(num * multyPrec) / multyPrec,
+//     Math.ceil(num * multyPrec) / multyPrec,
+//     Math.round(num * multyPrec) / multyPrec,
+//     Number(num.toFixed(prec)),
+//   ];
+// };
 
- // examples
-console.log(superRound(11.12556, 2)); // ==> [11.12, 11.12, 11.13, 11.13, 11.13]
- console.log(superRound(6.11, 3)); // ==> [6.11, 6.11, 6.11, 6.11, 6.11]
+// examples
+// console.log(superRound(11.12556, 2)); // ==> [11.12, 11.12, 11.13, 11.13, 11.13]
+// console.log(superRound(6.11, 3)); // ==> [6.11, 6.11, 6.11, 6.11, 6.11]
 
 /*****************************************************************************/
 /**String*/
@@ -1008,12 +1008,14 @@ console.log(superRound(11.12556, 2)); // ==> [11.12, 11.12, 11.13, 11.13, 11.13]
 //   { name: 'Hary', phoneNumber: '333-33-33' },
 // ];
 
-// const sortContactsF = (contacts, ask) => {
+// const sortContacts = (contacts, ask) => {
 //   if (!Array.isArray(contacts)) {
 //     return null;
 //   }
 
-//   const result = contacts.sort((a, b) => {
+//   let contactsCopy = contacts.slice();
+
+//   const result = contactsCopy.sort((a, b) => {
 //     if (ask === true) {
 //       return a.name.localeCompare(b.name);
 //     } else {
@@ -1023,8 +1025,28 @@ console.log(superRound(11.12556, 2)); // ==> [11.12, 11.12, 11.13, 11.13, 11.13]
 //   return result;
 // };
 
-// console.log(sortContactsF(contacts, true));
-// console.log(sortContactsF(contacts, false));
+// console.log(sortContacts(contacts, true));
+// console.log(sortContacts(contacts, false));
+
+// const sortContacts = (contacts, ask) => {
+//   if (!Array.isArray(contacts)) {
+//     return null;
+//   }
+
+//   let contactsCopy = contacts.slice();
+
+//   const result = contactsCopy.sort((a, b) => {
+//     if (ask === false) {
+//       return b.name.localeCompare(a.name);
+//     } else {
+//       return a.name.localeCompare(b.name);
+//     }
+//   });
+//   return result;
+// };
+
+// console.log(sortContacts(contacts, true));
+// console.log(sortContacts(contacts, false));
 
 // console.log('************V2******************');
 
@@ -1050,25 +1072,190 @@ console.log(superRound(11.12556, 2)); // ==> [11.12, 11.12, 11.13, 11.13, 11.13]
 /*****************************************************************************/
 /*11.3*/
 
-function splitString(string, num = 10) {
-  if (typeof string !== 'string') {
-    return null;
-  }
+// function splitString(string, num = 10) {
+//   if (typeof string !== 'string') {
+//     return null;
+//   }
+//   let x = '';
+//   const strArr = [];
 
-  //console.log(num);
-  const strArr = [];
-  let startPosition = 0;
-  while (true) {
-    let chunk = string.substr(startPosition, num);
-    if (chunk.length === 0) {
-      break;
-    }
-    strArr.push(chunk[0] + chunk.slice(1));
-    startPosition += num;
-  }
-  let strArrD = strArr.join('\n');
-  console.log(strArrD);
-  return strArrD;
-}
+//   let startPosition = 0;
+//   while (true) {
+//     let chunk = string.substr(startPosition, num);
+//     if (chunk.length === 0) {
+//       break;
+//     }
+//     strArr.push(chunk[0] + chunk.slice(1));
+//     startPosition += num;
+//   }
+//   let strArrD = strArr.join('\n');
+//   let strArrDots = strArrD.padEnd(num - 1, '.');
+//   return strArrDots;
+// }
 
-console.log(splitString('abcd efgh', 4)); //=> ['abcd', ' efg', 'h...']
+// function splitString(string, num = 10) {
+//   if (typeof string !== 'string') {
+//     return null;
+//   }
+//   let endStr = '';
+//   const strArr = [];
+//   console.log(typeof strArr);
+
+//   let startPosition = 0;
+//   while (true) {
+//     let chunk = string.substr(startPosition, num);
+
+//     if (chunk.length === 0) {
+//       break;
+//     }
+//     strArr.push(chunk[0] + chunk.slice(1).padEnd(num - 1, '.'));
+//     startPosition += num;
+//   }
+//   let strArrD = strArr;
+//   console.log(typeof strArrD);
+
+//   return strArrD;
+// }
+
+// console.log(splitString('abcd efgh', 4)); //=> ['abcd', ' efg', 'h...']
+// console.log(splitString('abcd efghsdfdslfmkdlsm')); //=> ['abcd', ' efg', 'h...']
+
+// console.log('abc'.padEnd('.'));
+//+endStr.padEnd(num - 1, '.');
+
+/*****************************************************************************/
+/*11.4*/
+
+// const countOccurrences = (text, str) => {
+//   return text.split(str).length - 1;
+// };
+
+// console.log(countOccurrences('ffbeffrgoff', 'ff'));
+
+//console.log('Hello, area you here??'.split('a').length - 1);
+
+/*****************************************************************************/
+
+// const countOccurrences = (text = '', str) => {
+//   if (str === '') {
+//     return null;
+//   }
+//   let startPositon = -1;
+//   let count = 0;
+//   while (true) {
+//     startPositon = text.indexOf(str, startPositon + 1);
+//     if (startPositon === -1) {
+//       break;
+//     } else count++;
+//   }
+//   return count;
+// };
+
+/*****************************************************************************/
+/**String*/
+/*****************************************************************************/
+/*12.1 */
+
+//const calc = expression => {
+//   const [a, operator, b] = expression.split(' ');
+//   let result;
+
+//   switch (operator) {
+//     case '+':
+//       result = Number(a) + +b;
+//       break;
+
+//     case '-':
+//       result = a - b;
+//       break;
+
+//     case '*':
+//       result = a * b;
+//       break;
+
+//     case '/':
+//       result = a / b;
+//       break;
+//   }
+//   return `${expression} = ${result}`;
+// };
+
+// console.log(calc('9 * 3'));
+
+/*****************************************************************************/
+/*12.1H */
+// function reverseString(string) {
+//   if (typeof string !== 'string') {
+//     return null;
+//   }
+
+//   return string.split('').reverse().join('');
+// }
+
+//console.log(string.trim());
+// console.log(reverseString('abcdf'));
+
+/*****************************************************************************/
+/*12.1 */
+// function cleanTransactionsList(arr) {
+//   let strArr = String(arr);
+//   let delliteSpaceWords = strArr.match(/(\d+\.\d+)|(\d+)/g);
+
+//   const res = delliteSpaceWords.map(el => `$${Number(el).toFixed(2)}`);
+
+//   return res;
+// }
+
+// console.log(cleanTransactionsList([1, 2, 3, 4, ' 1.9 ', '16.4', 17, ' 1 dollar '])); //=> ['$1.90', '$16.40', '$17.00']
+// console.log(cleanTransactionsList([' 1..9 ', '16.4', 17, ' 1 dollar '])); //=> ['$1.90', '$16.40', '$17.00']
+
+// let rdx = /(\d+\.\d+)|(\d+)/g;
+// console.log('fwf32cs4.3dsfn2..2'.match(rdx));
+
+/*******************/
+// const cleanTransactionsList2 = arr => {
+//   const cleanedArr = [...arr]
+//     .join()
+//     .split(',')
+//     .map(el => el.trim())
+//     .filter(el => el - 0 === +el)
+//     .map(el => `$${Number(el).toFixed(2)}`);
+//   return cleanedArr;
+// };
+
+//console.log(cleanTransactionsList2([1, 2, 3, 4, 5, '2dollars']));
+// ===> ['$1.00', '$2.00', '$3.00', '$4.00', '$5.00']
+/*******************/
+//};
+/*****************************************************************************/
+
+//console.log(parseFloat(' 19.36 dhsjdjhcs2cs'));
+
+/*****************************************************************************/
+/*12.2HN */
+// function cleanTransactionsList(arr) {
+//   let strArr = String(arr)
+//     .split(',')
+//     .filter(el => !/[a-zA-Z]/.test(el))
+//     .map(el => `$${parseFloat(el).toFixed(2)}`);
+
+//   return strArr;
+// }
+
+/*************************V2*****************************************/
+
+// function cleanTransactionsList(transactions) {
+//   let transactionsWithoutLetters = transactions.filter(element => !/[a-zA-Z]/.test(element));
+//   let clearTransactions = transactionsWithoutLetters.map(el => '$' + parseFloat(el).toFixed(2));
+//   return clearTransactions;
+// }
+
+// console.log(cleanTransactionsList([' 1.9 ', '16.4', 17, ' 1 dollar ', 'sfs3.42sd']));
+// //=> ['$1.90', '$16.40', '$17.00', '$1.00, '$3.42']
+
+// console.log(cleanTransactionsList([' 1..9 ', '16.4', 17, ' 1 dollar '])); //=> ['$1.90', '$16.40', '$17.00']
+
+// console.log(parseFloat('sfs3.42sd'));
+
+//   console.log('/********************************************/');
+//   /********************************************/
