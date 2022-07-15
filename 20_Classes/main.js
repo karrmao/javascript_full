@@ -25,9 +25,7 @@
 //     if (age >= 25) {
 //       console.log(`New photo request was sent for ${this.name}`);
 //     }
-//     if (age >= 0) {
-//       return age;
-//     }
+//     return age;
 //   }
 // }
 
@@ -41,7 +39,7 @@
 // user2.requestNewPhoto();
 
 // const user3 = new User('Ann');
-// user2.setAge(26);
+// user3.setAge(27);
 
 // console.log('/***********************************************/');
 // /***************************************************************/
