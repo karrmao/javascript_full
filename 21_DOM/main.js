@@ -1,8 +1,6 @@
-// /*********************21_DOM***********************************/
-//Task1 from lesson
 'use strict';
 
-export const tasks = [
+/*export*/ const tasks = [
   { text: 'Buy milk', done: false },
   { text: 'Pick up Tom from airport', done: false },
   { text: 'Visit party', done: false },
@@ -22,7 +20,7 @@ const renderTasks = tasksList => {
   const listItemsElems = tasksList
     .sort((a, b) => a.done - b.done)
     .map(({ text, done }) => {
-      const listItemElem = document.createElement('li'); /*2*/
+      const listItemElem = document.createElement('li');
       listItemElem.classList.add('list__item');
       if (done) {
         listItemElem.classList.add('list__item_done');
@@ -40,11 +38,3 @@ const renderTasks = tasksList => {
 };
 
 renderTasks(tasks);
-
-/*Формуємо html елементи li через .createElement(добавляємо його у змінну)*/
-/*Отримуємо доступ до .list через .querySelector(добавляємо його у змінну)*/
-
-//console.log('/***********************************************/');
-
-/*1*/
-/*2*/
