@@ -1,6 +1,6 @@
 'use strict';
 
-/*export*/ const tasks = [
+export const tasks = [
   { text: 'Buy milk', done: false },
   { text: 'Pick up Tom from airport', done: false },
   { text: 'Visit party', done: false },
@@ -15,7 +15,7 @@
 
 const renderTasks = tasksList => {
   // put your code here
-  const listElem = document.querySelector('.list'); /*1*/
+  const listElem = document.querySelector('.list');
 
   const listItemsElems = tasksList
     .sort((a, b) => a.done - b.done)
