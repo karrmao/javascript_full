@@ -14,7 +14,6 @@ export const tasks = [
  */
 
 const renderTasks = tasksList => {
-  // put your code here
   const listElem = document.querySelector('.list');
 
   const listItemsElems = tasksList
