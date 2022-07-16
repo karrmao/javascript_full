@@ -1,6 +1,5 @@
 export const setTitle = text => {
-  let addText = document.querySelector('.title');
-  addText.textContent = text;
+  document.querySelector('.title').textContent = text;
   //   console.dir(addText);
   //return addText;
 };
