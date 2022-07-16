@@ -1,46 +1,32 @@
-// export const getTitle = () => {
-//   const textContent = document.querySelector('.title');
-//   console.dir(textContent);
-//   return textContent;
-// };
+export const getTitle = () => {
+  const textContent = document.querySelector('.title').textContent;
+  console.dir(textContent);
+  return textContent;
+};
 
-// getTitle();
-// // getTitle.textContent;
-// console.log(getTitle.textContent);
+getTitle();
 
-// export const getDescription = () => {
-//   const innerText = document.querySelector('.about');
-//   console.dir(innerText);
-//   return innerText;
-// };
+export const getDescription = () => {
+  const innerText = document.querySelector('.about').innerText;
+  console.dir(innerText);
+  return innerText;
+};
 
-// getDescription();
+getDescription();
 
-// export const getPlans = () => {
-//   const innerHTML = document.querySelector('.plans');
-//   console.dir(innerHTML);
-//   return innerHTML;
-// };
+export const getPlans = () => {
+  const innerHTML = document.querySelector('.plans').innerHTML;
+  console.dir(innerHTML);
+  return innerHTML;
+};
 
-// getPlans();
+getPlans();
 
-// export const getGoal = () => {
-//   const outerHTML = document.querySelector('.goal');
-//   console.dir(outerHTML);
-//   return outerHTML;
-// };
+export const getGoal = () => {
+  const outerHTML = document.querySelector('.goal').outerHTML;
+  console.dir(outerHTML);
+  return outerHTML;
+};
 
-// getGoal();
+getGoal();
 // /*export*/
-
-export const getTitle = document.querySelector('.title');
-console.log(getTitle.textContent);
-
-export const getDescription = document.querySelector('.about');
-console.log(getDescription.innerText);
-
-export const getPlans = document.querySelector('.plans');
-console.log(getDescription.innerHTML);
-
-export const getGoal = document.querySelector('.goal');
-console.log(getDescription.outerHTML);
