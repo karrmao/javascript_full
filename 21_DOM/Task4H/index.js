@@ -5,7 +5,7 @@ export const setTitle = text => {
   //return addText;
 };
 
-setTitle('lll');
+setTitle();
 
 // export const setTitle = text => {
 //   const addText = document.querySelector('.title');
