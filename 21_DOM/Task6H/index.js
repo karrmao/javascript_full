@@ -7,6 +7,7 @@
 
 //console.log('bb');
 
-/*export*/ const clearList = () => {
+export const clearList = () => {
   document.querySelector('.categories').innerHTML = '';
 };
+/*export*/
