@@ -7,7 +7,8 @@
 
 //console.log('bb');
 
-export const clearList = () => {
-  document.querySelector('.categories').innerHTML = '';
+export const createButton = buttonText => {
+  document.createElement('button').body.append(`<button>${buttonText}</button>`);
 };
 /*export*/
+//document.creat('.categories').innerHTML = '';
