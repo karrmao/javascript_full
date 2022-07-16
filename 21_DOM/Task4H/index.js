@@ -1,4 +1,4 @@
-export const setTitle = text => {
+export let setTitle = text => {
   let addText = document.querySelector('.title');
   addText.textContent = text;
   //   console.dir(addText);
