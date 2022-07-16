@@ -4,7 +4,7 @@ export const setTitle = text => {
   //return addText;
 };
 
-setTitle();
+//setTitle();
 
 // export const setTitle = text => {
 //   const addText = document.querySelector('.title');
