@@ -3,9 +3,9 @@ export const createButton = buttonText => {
   const button = document.createElement('button');
   console.log(button);
   button.textContent = buttonText;
+  document.querySelector('body').append(button);
   //return button;
 };
-//   document.body.append(`<button>${buttonText}</button>`);
 // };
 /*export*/
 //console.log(createButton('Просто кнопка'));
