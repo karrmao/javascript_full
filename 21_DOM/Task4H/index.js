@@ -1,17 +1,17 @@
+export const setTitle = text => {
+  const addText = document.querySelector('.title');
+  addText.textContent = text;
+  //   console.dir(addText);
+  //return addText;
+};
+
+console.log(setTitle('lll'));
+
 // export const setTitle = text => {
 //   const addText = document.querySelector('.title');
-//   addText.textContent = text;
+//   //addText.textContent = text;
 //   //console.dir(addText);
 //   return addText;
 // };
 
-// console.log(setTitle('lll'));
-
-export const setTitle = text => {
-  const addText = document.querySelector('.title');
-  //addText.textContent = text;
-  //console.dir(addText);
-  //return addText;
-};
-
-console.log((setTitle.textContent = 'lll'));
+// console.log((setTitle.textContent = 'lll'));
