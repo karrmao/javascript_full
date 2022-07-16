@@ -1,11 +1,11 @@
-/*export*/ const getTitle = () => {
+export const getTitle = () => {
   const textContent = document.querySelector('.title');
   console.dir(textContent);
   return textContent;
 };
 getTitle();
 
-/*export*/ const getDescription = () => {
+export const getDescription = () => {
   const innerText = document.querySelector('.about');
   console.dir(innerText);
   return innerText;
@@ -13,7 +13,7 @@ getTitle();
 
 getDescription();
 
-/*export*/ const getPlans = () => {
+export const getPlans = () => {
   const innerHTML = document.querySelector('.plans');
   console.dir(innerHTML);
   return innerHTML;
@@ -21,7 +21,7 @@ getDescription();
 
 getPlans();
 
-/*export*/ const getGoal = () => {
+export const getGoal = () => {
   const outerHTML = document.querySelector('.goal');
   console.dir(outerHTML);
   return outerHTML;
