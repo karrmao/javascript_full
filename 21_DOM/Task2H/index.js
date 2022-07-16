@@ -8,12 +8,11 @@ getItemsList();
 
 export const getItemsArray = () => {
   const elementsArray = document.querySelectorAll('.tool');
-
-  const nodeList = Array.prototype.slice.call(elementsArray);
-  console.dir(nodeList);
-  return nodeList;
+  console.dir(elementsArray);
+  return getItemsArray;
 };
 
+const NodeList = Array.from(elementsArray);
 getItemsArray();
 
 /*export*/
