@@ -18,4 +18,4 @@ export const finishList = () => {
   lastItem.textContent = 8;
   items.append(lastItem);
 };
-//finishList();/*export*/
+finishList(); /*export*/
