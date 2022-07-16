@@ -4,6 +4,10 @@
 //   //return addText;
 // };
 
-export const setButton = buttonText => {
-  document.querySelector('body').innerHTML = '<button>buttonText</button>';
+// export const setButton = buttonText => {
+//   document.querySelector('body').innerHTML = 'buttonText';
+// };
+
+const srtButton = buttonText => {
+  document.querySelector('body').innerHTML = `<button>${buttonText}</button>`;
 };
