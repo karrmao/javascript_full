@@ -11,11 +11,11 @@ export const finishList = () => {
   specialItem.before(thirdItem);
 
   const sixthItem = document.createElement('li');
-  thirdItem.textContent = 6;
-  specialItem.after(thirdItem);
+  sixthItem.textContent = 6;
+  specialItem.after(sixthItem);
 
   const lastItem = document.createElement('li');
   lastItem.textContent = 8;
   items.append(lastItem);
 };
-finishList(); /*export*/
+//finishList();
