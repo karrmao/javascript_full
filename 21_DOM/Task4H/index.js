@@ -1,32 +1,8 @@
 export const setTitle = text => {
-  const textContent = document.querySelector('.title').textContent;
-  //console.dir(textContent);
-  return textContent;
+  const addText = document.querySelector('.title');
+  addText.textContent = text;
+  //console.dir(addText);
+  return addText;
 };
 
-setTitle();
-
-// export const getDescription = () => {
-//   const innerText = document.querySelector('.about').innerText;
-//   //console.dir(innerText);
-//   return innerText;
-// };
-
-// getDescription();
-
-// export const getPlans = () => {
-//   const innerHTML = document.querySelector('.plans').innerHTML;
-//   //console.dir(innerHTML);
-//   return innerHTML;
-// };
-
-// getPlans();
-
-// export const getGoal = () => {
-//   const outerHTML = document.querySelector('.goal').outerHTML;
-//   //console.dir(outerHTML);
-//   return outerHTML;
-// };
-
-// getGoal();
-// // /*export*/
+console.log(setTitle('lll'));
