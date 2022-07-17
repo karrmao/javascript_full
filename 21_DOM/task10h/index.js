@@ -9,4 +9,4 @@ export const manageClasses = () => {
   }
 };
 
-//console.log(manageClasses());
+console.log(manageClasses());
