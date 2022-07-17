@@ -7,4 +7,4 @@ export const squaredNumbers = () => {
     el.setAttribute('data-squared-number', toSquared(number));
   });
 };
-//console.log(squaredNumbers());
+console.log(squaredNumbers());
