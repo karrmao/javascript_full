@@ -1,4 +1,4 @@
-const squaredNumbers = () => {
+export const squaredNumbers = () => {
   const dataNumber = [...document.querySelectorAll('.number')];
   const toSquared = el => el * el;
 
