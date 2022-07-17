@@ -3,9 +3,9 @@ export const finishFrom = () => {
 
   const input = document.createElement('input');
 
-  console.log(input.setAttribute('type', 'text'));
-  console.log(input.setAttribute('name', 'login'));
-  console.log(addInnput.prepend(input));
+  input.setAttribute('type', 'text');
+  input.setAttribute('name', 'login');
+  addInnput.prepend(input);
 
   addInnput.lastElementChild.setAttribute('type', 'password');
 };
