@@ -1,4 +1,4 @@
-export const finishFrom = () => {
+export const finishForm = () => {
   const addInnput = document.querySelector('.login-form');
 
   const input = document.createElement('input');
@@ -10,4 +10,4 @@ export const finishFrom = () => {
   addInnput.lastElementChild.setAttribute('type', 'password');
 };
 
-//console.log(finishFrom());
+//console.log(finishForm());
