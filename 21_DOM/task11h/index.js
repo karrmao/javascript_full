@@ -1,12 +1,10 @@
-export const manageClasses = () => {
-  document.querySelector('.one').classList.add('selected');
-  document.querySelector('.two').classList.remove('selected');
-  document.querySelector('.three').classList.toggle('three_done');
+const squaredNumbers = () => {
+  const dataNumber = [...document.querySelectorAll('.number')];
+  const toSquared = el => el * el;
 
-  const includesSomeClass = document.querySelector('.four');
-  if (includesSomeClass.classList.contains('some-class')) {
-    includesSomeClass.classList.add('another-class');
-  }
+  dataNumber.forEach(el => {
+    const { _, number } = el.dataset;
+    el.setAttribute('data-squared-number', toSquared(number));
+  });
 };
-
-console.log(manageClasses());
+//console.log(squaredNumbers());
