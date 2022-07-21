@@ -1,5 +1,5 @@
 const getSection = num => {
-  const findNumber = document.querySelector(`span[data-number="${num}"`);
+  const findNumber = document.querySelector(`span[data-number="${num}"]`);
   return findNumber.parentElement.dataset.section;
 };
 //console.log(getSection(5));
