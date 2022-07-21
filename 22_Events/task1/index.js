@@ -15,13 +15,13 @@ const logTarget = (text, color) => {
 };
 
 /**************************************************/
-const logGreenDiv = logTarget(null, 'DIV', 'green');
-const logGreenP = logTarget(null, 'P', 'green');
-const logGreenSpan = logTarget(null, 'Span', 'green');
+const logGreenDiv = logTarget.bind(null, 'DIV', 'green');
+const logGreenP = logTarget.bind(null, 'P', 'green');
+const logGreenSpan = logTarget.bind(null, 'Span', 'green');
 
-const logGreyDiv = logTarget(null, 'DIV', 'grey');
-const logGreyP = logTarget(null, 'P', 'grey');
-const logGreySpan = logTarget(null, 'Span', 'grey');
+const logGreyDiv = logTarget.bind(null, 'DIV', 'grey');
+const logGreyP = logTarget.bind(null, 'P', 'grey');
+const logGreySpan = logTarget.bind(null, 'Span', 'grey');
 
 /**************************************************/
 
