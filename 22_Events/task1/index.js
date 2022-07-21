@@ -41,20 +41,20 @@ clearBtn.addEventListener('click', () => {
 
 removeHandlersBtn.addEventListener('click', () => {
   divElem.removeEventListener('click', logGreyDiv);
-  divElem.removeEventListener('click', logGreyP);
-  divElem.removeEventListener('click', logGreySpan);
+  pElem.removeEventListener('click', logGreyP);
+  spanElem.removeEventListener('click', logGreySpan);
 
   divElem.removeEventListener('click', logGreyDiv, true);
-  divElem.removeEventListener('click', logGreyP, true);
-  divElem.removeEventListener('click', logGreySpan, true);
+  pElem.removeEventListener('click', logGreyP, true);
+  spanElem.removeEventListener('click', logGreySpan, true);
 });
 
 attachHandlersBtn.addEventListener('click', () => {
   divElem.addEventListener('click', logGreyDiv);
-  divElem.addEventListener('click', logGreyP);
-  divElem.addEventListener('click', logGreySpan);
+  pElem.addEventListener('click', logGreyP);
+  spanElem.addEventListener('click', logGreySpan);
 
   divElem.addEventListener('click', logGreyDiv, true);
-  divElem.addEventListener('click', logGreyP, true);
-  divElem.addEventListener('click', logGreySpan, true);
+  pElem.addEventListener('click', logGreyP, true);
+  spanElem.addEventListener('click', logGreySpan, true);
 });
