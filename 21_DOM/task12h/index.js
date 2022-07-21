@@ -1,4 +1,4 @@
-const getSection = num => {
+export const getSection = num => {
   const findNumber = document.querySelector(`span[data-number="${num}"]`);
   return findNumber.parentElement.dataset.section;
 };
