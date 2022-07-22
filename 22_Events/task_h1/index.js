@@ -16,10 +16,10 @@
 /**************************************************************************/
 //ref2
 
-// const createBtton = document.querySelector('.create-btn');
-// createBtton.addEventListener('click', () => {
-//   alert('Click 2');
-// });
+const createBtton = document.querySelector('.create-btn');
+createBtton.addEventListener('click', () => {
+  alert('Click 2');
+});
 
 /**************************************************************************/
 //ref3
