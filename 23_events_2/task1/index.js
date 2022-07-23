@@ -6,7 +6,6 @@ const emailErrorElement = document.querySelector('.error-text_email');
 const passwordErrorElement = document.querySelector('.error-text_password');
 /************/ //Validators
 const isRequired = value => (value ? undefined : 'Required');
-
 const isEmail = value => (value.includes('@') ? undefined : 'Should be an email');
 /************/
 const validatorsByField = {
@@ -36,7 +35,6 @@ const onPasswordChange = event => {
 
 emailInputElement.addEventListener('input', onEmailChange);
 passwordInputElement.addEventListener('input', onPasswordChange);
-
 /************************************************************/
 const formElement = document.querySelector('.login-form');
 const onFormSubmit = event => {
