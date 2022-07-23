@@ -15,7 +15,7 @@ const validatorsByField = {
 
 const validate = (fieldName, value) => {
   const validators = validatorsByField[fieldName];
-  return [isRequired, isEmail]
+  return validators
     .map(validator => validator(value))
     .filter(errorText => errorText)
     .join(', ');
