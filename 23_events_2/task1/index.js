@@ -27,15 +27,14 @@ const onEmailChange = event => {
   emailErrorElement.textContent = errorText;
 };
 
-emailInputElement.addEventListener('input', onEmailChange);
 /************/
 const onPasswordChange = event => {
   const errorText = validate('password', event.target.value);
   passwordErrorElement.textContent = errorText;
 };
 
+emailInputElement.addEventListener('input', onEmailChange);
 emailInputElement.addEventListener('input', onPasswordChange);
-/************/
 
 /************************************************************/
 const formElement = document.querySelector('.login-form');
